@@ -47,7 +47,7 @@ module.exports = {
         allowNull: false,
       },
       description: {
-        type: Sequelize.ARRAY(Sequelize.JSONB),
+        type: Sequelize.JSONB,
         allowNull: false,
       },
       screen: {

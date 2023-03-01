@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     colorsAvailable: DataTypes.ARRAY(DataTypes.STRING),
     color: DataTypes.STRING,
     images: DataTypes.ARRAY(DataTypes.STRING),
-    description: DataTypes.ARRAY(DataTypes.JSONB),
+    description: DataTypes.JSONB,
     screen: DataTypes.STRING,
     resolution: DataTypes.STRING,
     processor: DataTypes.STRING,
@@ -35,6 +35,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Phone',
+    createdAt: true,
+    updatedAt: false
   });
   return Phone;
 };
