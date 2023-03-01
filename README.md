@@ -45,7 +45,7 @@ npm i
 npx sequelize-cli db:migrate
 ```
 
-6. Run seeder to create the necessary record in your database:
+6. Run seeder to create a custom records in your database:
 
 ```
 npx sequelize-cli db:seed:all
