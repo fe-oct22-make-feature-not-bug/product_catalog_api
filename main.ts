@@ -3,28 +3,46 @@
 import express = require('express');
 import cors = require('cors');
 
-import { Phone } from './models';
+import { router as phonesRouter } from './routes/phones';
 
-const f = async () => {
-  const phones = await Phone.findAll();
-
-  return phones;
-};
-
-f().then((data) => {
-  console.log(data);
-});
+import phonesService = require('./services/phones');
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+function createServer() {
 
-app.use('/products', (req, res) => {
-  console.log(req.query);
+  app.use('/phones', phonesRouter);
+  phonesService.reset();
 
-  res.end();
-});
+  app.use(cors());
+
+  return app;
+}
+
+module.exports = {
+  createServer,
+};
+
+// const f = async () => {
+//   const phones = await Phone.findAll();
+
+//   return phones;
+// };
+
+// f().then((data) => {
+//   console.log(data);
+// });
+
+// const app = express();
+
+// app.use(cors());
+// app.use(express.json());
+
+// app.use('/products', (req, res) => {
+//   console.log(req.query);
+
+//   res.end();
+// });
 
 app.listen(3000, () => {
   console.log('Server is running on localhost:3000');
