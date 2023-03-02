@@ -13,6 +13,15 @@
     "typescript": "^4.9.5"
   },
   "devDependencies": {
+    "@mate-academy/eslint-config": "*",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-node": "^8.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "2.8.4",
     "sequelize-cli": "^6.6.0",
     "swc": "^1.0.11",
     "swc-node": "^1.0.0"
@@ -20,10 +29,24 @@
   "scripts": {
     "start": "node -r @swc-node/register main.ts",
     "dev": "nodemon --exec node -r @swc-node/register main.ts",
-    "make-seed": "",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "make-migrate": "npx sequelize-cli db:migrate",
+    "unmake-migrate": "npx sequelize-cli db:migrate:undo",
+    "make-seed": "npx sequelize-cli db:seed:all",
+    "unmake-seed": "npx sequelize-cli db:seed:undo",
+    "make-reseed": "npx sequelize-cli db:seed:undo && npx sequelize-cli db:seed:all",
+    "lint": "npx eslint .",
+    "test": "npm run lint",
+    "lint-staged": "npx lint-staged",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Make feature, not bug",
-  "license": "ISC"
+  "license": "ISC",
+  "lint-staged": {
+    "*.{js,tx}": [
+      "npm test",
+      "npm test --cache --fix"
+    ],
+    "*.{js,ts,md}": "npx prettier --write"
+  }
 }
