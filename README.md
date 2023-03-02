@@ -6,10 +6,10 @@ Welcome to the Product Catalog API, a RESTful API built with Node.js, Express, a
 
 To get started with the Redmi Product Catalog API, follow these steps:
 
-1. Clone this repository to your local machine using the following command:
+1. Create your project directory:
 
 ```
-git clone https://github.com/fe-oct22-make-feature-not-bug/product_catalog.git
+mkdir product-catalog-api
 ```
 
 
@@ -19,39 +19,45 @@ git clone https://github.com/fe-oct22-make-feature-not-bug/product_catalog.git
 cd product-catalog-api
 ```
 
-3. Install the required dependencies using npm:
+3. Clone this repository to your local machine using the following command:
+
+```
+git clone https://github.com/fe-oct22-make-feature-not-bug/product_catalog.git
+```
+
+4. Install the required dependencies using npm:
 
 ```
 npm i
 ```
 
-4. Create a new PostgreSQL database and update the `config/config.json` file with your database credentials:
+5. Create a new PostgreSQL database and update the `config/config.json` file with your database credentials:
 
 ```json
 {
  "development": {
    "username": "your-username",
    "password": "your-password",
-   "database": "product_catalog_development",
+   "database": "your-database-name",
    "host": "localhost",
    "dialect": "postgres"
  }
 }
 ```
 
-5. Run the database migrations to create the necessary tables:
+6. Run the database migrations to create the necessary tables:
 
 ```
 npx sequelize-cli db:migrate
 ```
 
-6. Run seeder to create a custom records in your database:
+7. Run seeder to create a custom records in your database:
 
 ```
 npx sequelize-cli db:seed:all
 ```
 
-7. Start the server using the following command:
+8. Start the server using the following command:
 
 ```
 npm run dev
