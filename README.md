@@ -35,13 +35,13 @@ npm i
 
 ```json
 {
- "development": {
-   "username": "your-username",
-   "password": "your-password",
-   "database": "your-database-name",
-   "host": "localhost",
-   "dialect": "postgres"
- }
+"development": {
+    "username": "postgres",
+    "password": "your-password",
+    "database": "postgres",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
 }
 ```
 
