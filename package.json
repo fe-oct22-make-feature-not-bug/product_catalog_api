@@ -36,13 +36,17 @@
     "make-reseed": "npx sequelize-cli db:seed:undo && npx sequelize-cli db:seed:all",
     "lint": "npx eslint .",
     "test": "npm run lint",
+    "lint-staged": "npx lint-staged",
     "prepare": "husky install"
   },
   "keywords": [],
   "author": "Make feature, not bug",
   "license": "ISC",
   "lint-staged": {
-    "*.js": "npx eslint --cache --fix",
+    "*.{js,tx}": [
+      "npm test",
+      "npm test --cache --fix"
+    ],
     "*.{js,ts,md}": "npx prettier --write"
   }
 }
