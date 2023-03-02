@@ -1,6 +1,6 @@
 'use strict';
 
-const { Phone } = require('../models/phone');
+const { Phone } = require('../../models/phone');
 
 
 function getAll() {

@@ -6,7 +6,7 @@ const phonesController = require('../controllers/phones');
 const router = express.Router();
 
 router.get('/', phonesController.getAll);
-router.get('/:phoneId', phonesController.getOne);
+router.get('/:phoneId', express.json(),phonesController.getOne);
 
 module.exports = {
   router,
