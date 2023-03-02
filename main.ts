@@ -3,17 +3,17 @@
 import express = require('express');
 import cors = require('cors');
 
-// const { Phone } = require('../server/models/');
+import { Phone } from './models';
 
-// const f = async () => {
-//   const phones = await Phone.findAll();
+const f = async () => {
+  const phones = await Phone.findAll();
 
-//   return phones;
-// }
+  return phones;
+};
 
-// f().then((data) => {
-//   console.log(data)
-// })
+f().then((data) => {
+  console.log(data);
+});
 
 const app = express();
 
