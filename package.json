@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "node -r @swc-node/register main.ts",
-    "dev": "nodemon --exec node -r @swc-node/register main.ts",
+    "dev": "nodemon --watch src --exec node -r @swc-node/register --ext ts,js main.ts",
     "make-migrate": "npx sequelize-cli db:migrate",
     "unmake-migrate": "npx sequelize-cli db:migrate:undo",
     "make-seed": "npx sequelize-cli db:seed:all",
