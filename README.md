@@ -4,7 +4,7 @@ Welcome to the Product Catalog API, a RESTful API built with Node.js, Express, a
 
 ## Getting started
 
-To get started with the Redmi Product Catalog API, follow these steps:
+To get started with the Product Catalog API, follow these steps:
 
 1. Create your project directory:
 
