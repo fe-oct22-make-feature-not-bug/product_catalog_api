@@ -6,12 +6,11 @@ Welcome to the Product Catalog API, a RESTful API built with Node.js, Express, a
 
 To get started with the Product Catalog API, follow these steps:
 
-1. Create your project directory:
+1. Clone this repository to your local machine using the following command:
 
 ```
-mkdir product-catalog-api
+git clone https://github.com/fe-oct22-make-feature-not-bug/product_catalog.git
 ```
-
 
 2. Navigate to the project directory:
 
@@ -19,19 +18,13 @@ mkdir product-catalog-api
 cd product-catalog-api
 ```
 
-3. Clone this repository to your local machine using the following command:
-
-```
-git clone https://github.com/fe-oct22-make-feature-not-bug/product_catalog.git
-```
-
-4. Install the required dependencies using npm:
+3. Install the required dependencies using npm:
 
 ```
 npm i
 ```
 
-5. Create a new PostgreSQL database and update the `config/config.json` file with your database credentials:
+4. Create a new PostgreSQL database and update the `config/config.json` file with your database credentials:
 
 ```json
 {
@@ -45,19 +38,13 @@ npm i
 }
 ```
 
-6. Run the database migrations to create the necessary tables:
+5. This command runs the database migrations to create the necessary tables and then runs seeder to create a custom records in your database:
 
 ```
-npx sequelize-cli db:migrate
+npm run migrate-seed-all
 ```
 
-7. Run seeder to create a custom records in your database:
-
-```
-npx sequelize-cli db:seed:all
-```
-
-8. Start the server using the following command:
+6. Start the server using the following command:
 
 ```
 npm run dev
