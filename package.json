@@ -34,6 +34,7 @@
     "make-seed": "npx sequelize-cli db:seed:all",
     "unmake-seed": "npx sequelize-cli db:seed:undo",
     "make-reseed": "npx sequelize-cli db:seed:undo && npx sequelize-cli db:seed:all",
+    "migrate-seed-all": "npm run unmake-migrate && npm run unmake-seed && npm run make-migrate && npm run make-seed",
     "lint": "npx eslint .",
     "test": "npm run lint",
     "lint-staged": "npx lint-staged",
