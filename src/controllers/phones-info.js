@@ -1,6 +1,4 @@
-'use strict';
-
-const phonesService = require('../services/phones');
+const phonesService = require('../services/phones-info');
 
 const getAll = (req, res) => {
   phonesService.getAll().then((phones) => {
@@ -28,17 +26,8 @@ const getOne = (req, res) => {
       res.sendStatus(500);
     });
 };
-const getNew = (req, res) => {
-  phonesService.getNew().then((phones) => res.send(phones));
-};
-
-const getHot = (req, res) => {
-  phonesService.getHot().then((phones) => res.send(phones));
-};
 
 module.exports = {
   getAll,
   getOne,
-  getNew,
-  getHot,
 };

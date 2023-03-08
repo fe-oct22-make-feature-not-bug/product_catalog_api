@@ -9,4 +9,4 @@ node_modules
 .DS_Store
 
 # configs
-# config/config.json
+config/config.json
