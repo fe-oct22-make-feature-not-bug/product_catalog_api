@@ -15,12 +15,17 @@ module.exports = (sequelize, DataTypes) => {
   ShortPhones.init(
     {
       name: DataTypes.STRING,
-      capacity: DataTypes.STRING,
-      priceRegular: DataTypes.FLOAT,
-      priceDiscount: DataTypes.FLOAT,
-      image: DataTypes.STRING,
+      category: DataTypes.STRING,
+      phoneId: DataTypes.STRING,
+      itemId: DataTypes.STRING,
+      fullPrice: DataTypes.FLOAT,
+      price: DataTypes.FLOAT,
       screen: DataTypes.STRING,
+      capacity: DataTypes.STRING,
+      color: DataTypes.STRING,
       ram: DataTypes.STRING,
+      year: DataTypes.INTEGER,
+      image: DataTypes.STRING,
     },
     {
       sequelize,

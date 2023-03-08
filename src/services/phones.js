@@ -1,28 +1,28 @@
 'use strict';
 
 const { Sequelize } = require('sequelize');
-const { Phone } = require('../../models');
+const { ShortPhones } = require('../../models');
 
 function getAll() {
-  return Phone.findAll({
+  return ShortPhones.findAll({
     order: ['createdAt'],
   });
 }
 
 function findById(phoneId) {
-  return Phone.findByPk(phoneId);
+  return ShortPhones.findByPk(phoneId);
 }
 
 function getNew() {
-  return Phone.findAll({
+  return ShortPhones.findAll({
     order: ['createdAt'],
     limit: 10,
   });
 }
 
 function getHot() {
-  return Phone.findAll({
-    order: Sequelize.literal('("priceRegular" - "priceDiscount") DESC'),
+  return ShortPhones.findAll({
+    order: Sequelize.literal('("fullPrice" - "price") DESC'),
     limit: 10,
   });
 }
