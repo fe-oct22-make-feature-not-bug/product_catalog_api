@@ -3,7 +3,10 @@
 const phonesService = require('../services/phones');
 
 const getAll = (req, res) => {
-  phonesService.getAll().then((phones) => {
+  const pageNumber = req.query.page || 1;
+  const pageItems = req.query.items || 16;
+
+  phonesService.getAll(pageNumber, pageItems).then((phones) => {
     res.send(phones);
   });
 };
