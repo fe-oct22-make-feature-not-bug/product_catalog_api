@@ -3,30 +3,46 @@
 const { Sequelize } = require('sequelize');
 const { ShortPhones } = require('../../models');
 
-// async function getAll(pageNumber, pageItems) {
-//   const offset = (pageNumber - 1) * pageItems;
+async function getAll(pageNumber, pageItems, sortBy) {
+  const offset = (pageNumber - 1) * pageItems;
 
-//   const totalCount = await ShortPhones.count();
+  const totalCount = await ShortPhones.count();
 
-//   const items = await ShortPhones.findAll({
-//     order: ['createdAt'],
-//     limit: pageItems,
-//     offset: offset,
-//   });
+  const order = [];
 
-//   const totalPages = Math.ceil(totalCount / pageItems);
+  switch (sortBy) {
+    case 'newest':
+      order.push(['year', 'DESC']);
+      break;
+    case 'alphabetically':
+      order.push(['name', 'ASC']);
+      break;
+    case 'cheapest':
+      order.push(['price', 'ASC']);
+      break;
+    default:
+      order.push(['createdAt', 'DESC']);
+  }
 
-//   return {
-//     items,
-//     totalPages,
-//   };
-// }
-
-function getAll() {
-  return ShortPhones.findAll({
-    order: ['createdAt'],
+  const items = await ShortPhones.findAll({
+    order: order,
+    limit: pageItems,
+    offset: offset,
   });
+
+  const totalPages = Math.ceil(totalCount / pageItems);
+
+  return {
+    items,
+    totalPages,
+  };
 }
+
+// function getAll() {
+//   return ShortPhones.findAll({
+//     order: ['createdAt'],
+//   });
+// }
 
 function findById(phoneId) {
   return ShortPhones.findByPk(phoneId);

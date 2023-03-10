@@ -5,8 +5,11 @@ const phonesService = require('../services/phones');
 const getAll = (req, res) => {
   const pageNumber = req.query.page || 1;
   const pageItems = req.query.items || 16;
+  const sortBy = req.query.sortBy || 'newest';
 
-  phonesService.getAll(pageNumber, pageItems).then((phones) => {
+  console.log(sortBy, req.query.sortBy);
+
+  phonesService.getAll(pageNumber, pageItems, sortBy).then((phones) => {
     res.send(phones);
   });
 };
