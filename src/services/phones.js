@@ -18,7 +18,7 @@ async function getAll(pageNumber, pageItems, sortBy) {
       order.push(['name', 'ASC']);
       break;
     case 'cheapest':
-      order.push(['price', 'ASC']);
+      order.push(['discountPrice', 'ASC']);
       break;
     default:
       order.push(['createdAt', 'DESC']);
@@ -37,12 +37,6 @@ async function getAll(pageNumber, pageItems, sortBy) {
     totalPages,
   };
 }
-
-// function getAll() {
-//   return ShortPhones.findAll({
-//     order: ['createdAt'],
-//   });
-// }
 
 function findById(phoneId) {
   return ShortPhones.findByPk(phoneId);
