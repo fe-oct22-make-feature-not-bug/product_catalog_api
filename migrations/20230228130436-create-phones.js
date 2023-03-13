@@ -44,6 +44,10 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
+        image: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
         images: {
           type: Sequelize.ARRAY(Sequelize.STRING),
           allowNull: false,
