@@ -25,12 +25,13 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        fullPrice: {
+        priceRegular: {
           type: Sequelize.DECIMAL(10, 2),
           allowNull: false,
         },
-        price: {
+        priceDiscount: {
           type: Sequelize.DECIMAL(10, 2),
+          allowNull: true,
         },
         screen: {
           type: Sequelize.STRING,

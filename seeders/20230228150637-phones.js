@@ -32,6 +32,7 @@ const readJsonFiles = async () => {
         const data = JSON.parse(jsonData);
         Object.assign(data, { createdAt: new Date() });
         data.description = JSON.stringify(data.description);
+        data.image = data.images[0];
         phones.push(data);
       } catch (e) {
         console.error(`Error parsing JSON file ${file}: ${e}`);

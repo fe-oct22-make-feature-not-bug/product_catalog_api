@@ -17,6 +17,12 @@ const readJsonFile = async () => {
 
     for (const phone of data) {
       phone.createdAt = new Date();
+      phone.priceRegular = phone.fullPrice;
+      phone.priceDiscount = phone.price;
+
+      delete phone.fullPrice;
+      delete phone.price;
+
       phones.push(phone);
     }
   } catch (err) {
