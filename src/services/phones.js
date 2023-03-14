@@ -38,12 +38,6 @@ async function getAll(pageNumber, pageItems, sortBy) {
   };
 }
 
-// function getAll() {
-//   return ShortPhones.findAll({
-//     order: ['createdAt'],
-//   });
-// }
-
 function findById(phoneId) {
   return ShortPhones.findByPk(phoneId);
 }
