@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "postgres",
-    "password": "PYZboREFPNw2UmsG375h",
+    "password": "4qe7GCcz16nLXSkGrGtu",
     "database": "railway",
-    "host": "nicegudgets.up.railway.app",
+    "host": "containers-us-west-21.railway.app",
     "port": "7816",
     "dialect": "postgres"
   },
@@ -16,9 +16,9 @@
   },
   "production": {
     "username": "postgres",
-    "password": "PYZboREFPNw2UmsG375h",
+    "password": "4qe7GCcz16nLXSkGrGtu",
     "database": "railway",
-    "host": "nicegudgets.up.railway.app",
+    "host": "containers-us-west-21.railway.app",
     "port": "7816",
     "dialect": "postgres"
   }
